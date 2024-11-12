@@ -1,0 +1,34 @@
+{
+    "name": "RTB - PathFinding",
+    "privileged": true,
+    "remoteUser": "rtb",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "USERNAME": "rtb"
+        }
+    },
+    "forwardPorts": [8000, 53000],
+    "workspaceFolder": "/home/ws",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python"
+            ]
+        }
+    },
+    "runArgs": [
+        "--net=host",
+        "--name",
+        "rtb_pathfinding"
+    ],
+    "mounts": [
+        "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/Resources,target=/home/ws/Resources,type=bind,consistency=cached",
+        "source=${localWorkspaceFolder}/RTB_toolbox,target=/home/ws/RTB_toolbox,type=bind,consistency=cached"
+    ],
+    "containerEnv": {
+        "DISPLAY": "unix:1"
+    },
+    "postCreateCommand": "pip install --user -r Resources/requirements.txt"
+}

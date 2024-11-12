@@ -1,0 +1,7 @@
+pandas
+numpy
+roboticstoolbox-python[collision]
+pybullet
+pycapacity
+trimesh
+networkx

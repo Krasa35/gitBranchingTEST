@@ -20,5 +20,3 @@ objects, env = call.setup_env(panda=True,
                               dest = True, 
                               resources=resources)  
 call.robot_move(objects["panda"], env, df_p.values)    
-
-
