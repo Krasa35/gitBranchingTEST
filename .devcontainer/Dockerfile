@@ -15,7 +15,7 @@ RUN apt update \
     && rm -rf /var/lib/apt/lists/*
     # Upgrade pip
 RUN pip install --upgrade pip
-RUN apt update && apt upgrade -y 
+# RUN apt update && apt upgrade -y 
 RUN echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
     && chmod 0440 /etc/sudoers.d/$USERNAME
 ENV SHELL /bin/bash
