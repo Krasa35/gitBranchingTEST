@@ -8,8 +8,7 @@
             "USERNAME": "rtb"
         }
     },
-    "forwardPorts": [8000, 53000],
-    "workspaceFolder": "/home/rtb",
+    "forwardPorts": [8000, 53000, 52000, 52001, 53001],
     "customizations": {
         "vscode": {
             "extensions": [
@@ -21,13 +20,5 @@
         "--name",
         "rtb_pathfinding"
     ],
-    "mounts": [
-        "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/Resources,target=/home/rtb/Resources,type=bind,consistency=cached",
-        "source=${localWorkspaceFolder}/RTB_toolbox,target=/home/rtb/RTB_toolbox,type=bind,consistency=cached"
-    ],
-    "containerEnv": {
-        "DISPLAY": "unix:1"
-    },
-    "postCreateCommand": "pip install --user -r Resources/requirements.txt"
+    "postCreateCommand": "pip install --user -r /workspaces/robot_path_finding/Resources/requirements.txt"
 }
