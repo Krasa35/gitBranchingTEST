@@ -18,7 +18,6 @@
         }
     },
     "runArgs": [
-        "--net=host",
         "--name",
         "rtb_pathfinding"
     ],
